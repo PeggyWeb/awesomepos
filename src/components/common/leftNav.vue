@@ -30,7 +30,9 @@
     width:5%;
     height:100%;
     font-size: 10px;
-    color:#fff;text-align:center;
+    color:#fff;
+    text-align:center;
+    background-color: #1D8ce0;
   }
   .iconfont{
     font-size:24px;
@@ -39,18 +41,20 @@
     padding:0px;
     margin:0px;
   }
-  .left li{
-    list-style:none;
-    padding:10px;
+  .left-nav li{
+    list-style: none;
+    text-align: center;
     border-bottom:1px solid #20a0ff;
-
+    padding:10px;
   }
 </style>
 <script>
   export default{
       name:'leftNav',
     data(){
-          return;
+          return{
+
+          }
     }
   }
 </script>
