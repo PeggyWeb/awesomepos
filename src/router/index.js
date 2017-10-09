@@ -10,12 +10,14 @@ export default new Router({
     {
       path: '/',
       name: 'Pos',
-      component: Pos
+      component: Pos,
+      showLeft:'true'
     },
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: Login,
+      showLeft:'false'
     }
   ]
 })

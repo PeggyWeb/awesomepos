@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <leftNav></leftNav>
+    <leftNav v-if="$route.showLeft"></leftNav>
     <div class="main">
       <router-view></router-view>
     </div>
-
+    <p>{{$route.showLeft}}</p>
   </div>
 </template>
 
