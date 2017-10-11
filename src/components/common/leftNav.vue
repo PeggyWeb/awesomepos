@@ -15,7 +15,7 @@
       </li>
       <li>
         <i class="icon iconfont icon-huiyuanqia"></i>
-        <div>会员</div>
+        <div>订单</div>
       </li>
       <li>
         <i class="icon iconfont icon-tongji"></i>

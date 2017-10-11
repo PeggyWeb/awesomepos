@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <leftNav v-if="$route.showLeft"></leftNav>
+    <leftNav v-show="$route.path!=='/login'"></leftNav>
     <div class="main">
       <router-view></router-view>
     </div>
-    <p>{{$route.showLeft}}</p>
   </div>
 </template>
 
@@ -30,7 +29,7 @@ export default {
     float:left;
     width:95%;
     height:100%;
-    backgorund-color:#efff2f;
+    background-color:#fff;
     overflow: auto;
   }
 </style>
