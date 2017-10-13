@@ -14,8 +14,10 @@
 				 <p>30天最高7000</p>
 			</el-col>
 			<el-col :span="18">
+				<div class="m-chart">
 				<line-chart :chart-data="datacollection"></line-chart>
     			<button @click="fillData()">Randomize</button>
+    			</div>
 			</el-col>
 		</el-row>
 		<el-row>
@@ -73,6 +75,7 @@
     right: 0;
     transform: rotate(-45deg);
 }
+.m-chart{width:50%;}
 </style>
 <script>
 import LineChart from '../../assets/js/LineChart.js'
@@ -103,7 +106,7 @@ export default {
                         data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),this.getRandomInt()]
                     }, {
                         label: 'Data One',
-                        backgroundColor: '#0f0',
+                        backgroundColor: '#00f',
                         data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),this.getRandomInt()]
                     }
                 ]
@@ -111,6 +114,7 @@ export default {
             
         },
         getRandomInt() {
+
             return Math.floor(Math.random() * (50 - 5 + 1)) + 5
         },
         setProgessBar(max,cur){
