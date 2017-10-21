@@ -15,8 +15,7 @@
 			</el-col>
 			<el-col :span="18">
 				<div class="m-chart">
-				<line-chart :chart-data="datacollection"></line-chart>
-    			<button @click="fillData()">Randomize</button>
+				<line-chart :chart-data="datacollection" :option="{responseive:false}" :width="600"></line-chart>
     			</div>
 			</el-col>
 		</el-row>
@@ -31,51 +30,51 @@
 	</div>
 </template>
 <style type="text/css">
-	.progressbar{
-    position: relative;
-    margin: 50px auto;
-    width: 100px;
-    height: 100px;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-}
-.left-container,.right-container{
-    position: absolute;
-    width: 70px;
-    height: 140px;
-    top:-3px;
-    overflow: hidden;
-    z-index: 1;
-}
-.left-container{
-    left: -20px;
-}
-.right-container{
-    right: -3px;
-}
-.left-circle,.right-circle{
-    position: absolute;
-    top:0;
-    width: 98px;
-    height: 98px;
-    border:4px solid transparent;   
-    border-radius: 50%;    
-    transition: all .5s linear;
-    z-index: 2;
-}
-.left-circle{
-    left: 17px;
-    border-top: 4px solid #1D8ce0;
-    border-left: 4px solid #1D8ce0;
-    transform: rotate(-225deg);
-}
-.right-circle{
-    border-right: 4px solid #1D8ce0;
-    border-bottom: 4px solid #1D8ce0;
-    right: 0;
-    transform: rotate(-45deg);
-}
-.m-chart{width:50%;}
+    .progressbar{
+        position: relative;
+        margin: 50px auto;
+        width: 100px;
+        height: 100px;
+        border: 2px solid #ccc;
+        border-radius: 50%;
+    }
+    .left-container,.right-container{
+        position: absolute;
+        width: 70px;
+        height: 140px;
+        top:-3px;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .left-container{
+        left: -20px;
+    }
+    .right-container{
+        right: -3px;
+    }
+    .left-circle,.right-circle{
+        position: absolute;
+        top:0;
+        width: 98px;
+        height: 98px;
+        border:4px solid transparent;   
+        border-radius: 50%;    
+        transition: all .5s linear;
+        z-index: 2;
+    }
+    .left-circle{
+        left: 17px;
+        border-top: 4px solid #1D8ce0;
+        border-left: 4px solid #1D8ce0;
+        transform: rotate(-225deg);
+    }
+    .right-circle{
+        border-right: 4px solid #1D8ce0;
+        border-bottom: 4px solid #1D8ce0;
+        right: 0;
+        transform: rotate(-45deg);
+    }
+    .m-chart{width:500px;height: 400px;}
 </style>
 <script>
 import LineChart from '../../assets/js/LineChart.js'
@@ -98,23 +97,23 @@ export default {
         fillData() {
 
             this.datacollection= {
-                labels: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),this.getRandomInt()],
+                labels: ["January","February","March","April","May","June","July"],
                 datasets: [
                     {
-                        label: 'Data One',
-                        backgroundColor: '#f87979',
-                        data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),this.getRandomInt()]
-                    }, {
-                        label: 'Data One',
-                        backgroundColor: '#00f',
-                        data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),this.getRandomInt()]
+                        label:"交易额",
+                        fillColor : "rgba(151,187,205,0.5)",
+                        strokeColor : "rgba(151,187,205,1)",
+                        pointColor : "rgba(151,187,205,1)",
+                        backgroundcolor:"rgba(185,220,237,1)",
+                        bordercolor:"rgba(151,187,205,1)",
+                        pointStrokeColor : "#fff",
+                        data : [65,59,90,81,56,55,40]
                     }
                 ]
             };
             
         },
         getRandomInt() {
-
             return Math.floor(Math.random() * (50 - 5 + 1)) + 5
         },
         setProgessBar(max,cur){

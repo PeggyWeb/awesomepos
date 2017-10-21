@@ -18,8 +18,10 @@
         <div>订单</div>
       </li>
       <li>
+        <router-link to="/statistics">
         <i class="icon iconfont icon-tongji"></i>
         <div>统计</div>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -47,10 +49,11 @@
     border-bottom:1px solid #20a0ff;
     padding:10px;
   }
+  .left-nav a{color:inherit;}
 </style>
 <script>
   export default{
-      name:'leftNav',
+    name:'leftNav',
     data(){
           return{
 

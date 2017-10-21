@@ -12,7 +12,7 @@
                 <el-table-column prop="price" label="金额" width="70"></el-table-column>
                 <el-table-column  label="操作" width="100" fixed="right">
                   <template scope="scope">
-                    <el-button type="text" size="small" @click="">删除</el-button>
+                    <el-button type="text" size="small" @click="delSingleGoods(scope.row)">删除</el-button>
                     <el-button type="text" size="small" @click="addOrderList(scope.row)">增加</el-button>
                   </template>
                 </el-table-column>
@@ -28,8 +28,8 @@
           </div>
           <div class="btn-wrap">
             <el-button type="warning" >挂单</el-button>
-            <el-button type="danger" >删除</el-button>
-            <el-button type="success" >结账</el-button>
+            <el-button type="danger" @click="delAllGoods" >删除</el-button>
+            <el-button type="success" @click="checkout">结账</el-button>
           </div>
 
         </el-col>
@@ -133,7 +133,7 @@
     width: 40%;
   }
   .foodName{
-    font-size: 18px;
+    font-size: 16px;
     padding-left: 10px;
     color:brown;
   }
@@ -184,8 +184,6 @@ import axios from "axios"
     },
     methods:{
       addOrderList(goods){
-        this.totalMoney=0;
-        this.totalCount=0;
         //商品是否存在ui订单列表中
         let isHave = false;
         for(let i = 0;i<this.tableData.length;i++){
@@ -202,10 +200,39 @@ import axios from "axios"
           this.tableData.push(newGoods)
         }
         //总价和数量计算
-        this.tableData.forEach((element)=>{
-          this.totalCount+=element.count;
-          this.totalMoney=this.totalMoney+(element.price*element.count);
-        })
+        this.getAllMoney();
+      },
+      delSingleGoods(goods){
+        this.tableData=this.tableData.filter(o=>o.goodsId != goods.goodsId);
+        this.getAllMoney();
+      },
+      getAllMoney(){
+        this.totalCount=0;
+        this.totalMoney=0;
+        if(this.tableData){
+          this.tableData.forEach((element)=>{
+            this.totalCount+=element.count;
+            this.totalMoney=this.totalMoney+(element.price*element.count)
+          })
+        }
+      },
+      delAllGoods(){
+        this.tableData=[];
+        this.totalCount=0;
+        this.totalMoney=0;
+      },
+      checkout(){
+        if(this.totalCount!=0){
+          this.tableData=[];
+          this.totalCount=0;
+          this.totalMoney=0;
+          this.$message({
+            message:'结账成功',
+            type:'success'
+          });
+        }else{
+          this.$message.error('不能空结')
+        }
       }
     }
   }

@@ -19,6 +19,7 @@ export default {
 
 <style>
 #app {
+  min-width: 1110px;
   font-family: 'microsoft yahei', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
