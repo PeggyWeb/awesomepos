@@ -6,12 +6,14 @@
         <div>收银</div>
       </li>
       <li>
-        <i class="icon iconfont icon-dianpu"></i>
-        <div>店铺</div>
+          <i class="icon iconfont icon-dianpu"></i>
+          <div>店铺</div>
       </li>
       <li>
-        <i class="icon iconfont icon-hanbao"></i>
-        <div>商品</div>
+        <router-link to="/">
+          <i class="icon iconfont icon-hanbao"></i>
+          <div>商品</div>
+        </router-link>
       </li>
       <li>
         <i class="icon iconfont icon-huiyuanqia"></i>
@@ -49,7 +51,7 @@
     border-bottom:1px solid #20a0ff;
     padding:10px;
   }
-  .left-nav a{color:inherit;}
+  .left-nav a{color:inherit;text-decoration: none}
 </style>
 <script>
   export default{

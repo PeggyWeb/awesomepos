@@ -22,9 +22,20 @@
 		<el-row>
 			<el-col :span="6" >
 				<h3>订单数</h3>
+                <div class="progressbar">
+                    <div class="left-container">
+                        <div class="left-circle" :style="{transform:'rotate('+dataProgressBar[0]+'deg)'}"></div>
+                    </div>
+                    <div class="right-container">
+                        <div class="right-circle" :style="{transform:'rotate('+dataProgressBar[1]+'deg)'}"></div>
+                    </div>
+                </div>      
+                 <p>30天2601单</p>
 			</el-col>
 			<el-col :span="18">
-				<p>232</p>
+				<div class="m-chart">
+                <line-chart :chart-data="datacollection" :option="{responseive:false}" :width="600"></line-chart>
+                </div>
 			</el-col>
 		</el-row>
 	</div>

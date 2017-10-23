@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Pos from '@/components/Pos'
 import Login from '@/components/page/login'
 import Statistics from '@/components/page/statistics'
+import Order from '@/components/page/orderList'
 
 Vue.use(Router)
 
@@ -22,6 +23,10 @@ export default new Router({
       path:'/statistics',
       name:'statistics',
       component:Statistics
+    },{
+      path:'/order',
+      name:'order',
+      component:Order
     }
   ]
 })
