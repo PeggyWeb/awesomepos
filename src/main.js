@@ -6,6 +6,10 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import router from './router'
 
+
+require('./assets/css/reset.css')
+
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 /* eslint-disable no-new */

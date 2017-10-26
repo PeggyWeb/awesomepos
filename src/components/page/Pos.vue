@@ -43,7 +43,7 @@
 </style>
 <script>
   export default{
-      name:'Pos',
+    name:'Pos',
     data(){
       return{
          tableData: [{          
@@ -67,9 +67,9 @@
             count:1
           }]
         }     
-      },
+    },
     mounted:function(){
-        var orderHeight=document.body.clientHeight;
+        let orderHeight=document.body.clientHeight;
         document.getElementById('order').style.height=orderHeight+'px';
     }
   }

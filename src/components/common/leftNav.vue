@@ -16,8 +16,10 @@
         </router-link>
       </li>
       <li>
-        <i class="icon iconfont icon-huiyuanqia"></i>
-        <div>订单</div>
+        <router-link to="/order">
+          <i class="icon iconfont icon-huiyuanqia"></i>
+          <div>订单</div>
+        </router-link>
       </li>
       <li>
         <router-link to="/statistics">

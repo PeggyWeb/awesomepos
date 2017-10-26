@@ -1,5 +1,7 @@
 <template>
+
   <div id="app">
+    <!-- <topBar></topBar> -->
     <leftNav v-show="$route.path!=='/login'"></leftNav>
     <div class="main">
       <router-view></router-view>
@@ -9,10 +11,12 @@
 
 <script>
   import leftNav from './components/common/leftNav'
+  import topBar from './components/common/topBar'
 export default {
   name: 'app',
   components:{
-    leftNav
+    leftNav,
+    topBar
   }
 }
 </script>
@@ -33,4 +37,5 @@ export default {
     background-color:#fff;
     overflow: auto;
   }
+  a {color:inherit;text-decoration:none;}
 </style>
