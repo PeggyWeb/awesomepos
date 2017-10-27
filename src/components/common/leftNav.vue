@@ -40,7 +40,7 @@
     text-align:center;
     background-color: #1D8ce0;
   }
-  .iconfont{
+  .left-nav .iconfont{
     font-size:24px;
   }
   .left-nav ul{
