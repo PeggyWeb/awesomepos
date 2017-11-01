@@ -82,7 +82,7 @@
                     <span class="foodPrice">￥{{goods.price}}</span>
                   </li>
                 </ul>
-              </el-tab-pane>              
+              </el-tab-pane>
             </el-tabs>
           </div>
         </el-col>
@@ -145,6 +145,9 @@
   .totUp-wrap{
    padding:10px;
   }
+  .card-simple{
+    padding:20px
+  }
 </style>
 <script>
 import axios from "axios"
@@ -161,7 +164,7 @@ import axios from "axios"
         totalMoney:0,
         totalCount:0
       }
-    },    
+    },
     created(){
       axios.get('http://jspang.com/DemoApi/oftenGoods.php').then(response=>{
         this.oftenGoods=response.data;
@@ -189,7 +192,7 @@ import axios from "axios"
         for(let i = 0;i<this.tableData.length;i++){
           if(this.tableData[i].goodsId== goods.goodsId){
              isHave=true;
-           }        
+           }
         }
         if(isHave){
           let arr = this.tableData.filter(o=>o.goodsId == goods.goodsId);
