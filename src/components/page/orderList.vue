@@ -48,12 +48,23 @@
       <el-tab-pane label="预订单提醒">
       </el-tab-pane>
       <el-tab-pane label="取消订单">
+        <div>
+          <div class="header mb-20">
+            <b class="color-blue">105</b>
+
+          </div>
+        </div>
       </el-tab-pane>
       <el-tab-pane label="配送异常">
       </el-tab-pane>
       <el-tab-pane label="催单">
       </el-tab-pane>
       <el-tab-pane label="售后退款">
+        <div>
+          <div>
+
+          </div>
+        </div>
       </el-tab-pane>
     </el-tabs>
 	</div>
