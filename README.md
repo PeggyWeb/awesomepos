@@ -1,4 +1,4 @@
-外卖平台商家端，架构element-ui
+外卖平台商家端，架构vue+vue-router+vue-chart.js+element-ui
 # awesomepos
 
 
